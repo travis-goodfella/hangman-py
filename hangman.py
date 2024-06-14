@@ -52,7 +52,7 @@ def display_hangman(incorrect_guesses):
            -----
            |   |
            O   |
-          /|\  |
+          /|\\  |
                |
                |
         =========
@@ -61,7 +61,7 @@ def display_hangman(incorrect_guesses):
            -----
            |   |
            O   |
-          /|\  |
+          /|\\  |
           /    |
                |
         =========
@@ -70,8 +70,8 @@ def display_hangman(incorrect_guesses):
            -----
            |   |
            O   |
-          /|\  |
-          / \  |
+          /|\\  |
+          / \\  |
                |
         =========
         """
@@ -79,7 +79,7 @@ def display_hangman(incorrect_guesses):
     print(stages[incorrect_guesses])
 
 def hangman():
-    words = ["python", "hangman", "challenge", "programming", "computer", "random"]
+    words = ["python", "algorithm", "snowden", "programming", "computer", "ransomware", "encryption", "database", "cyber", "developer", "malware", "phishing", "firewall"]
     word_to_guess = get_random_word(words)
     guessed_letters = set()
     incorrect_guesses = 0
@@ -104,8 +104,7 @@ def hangman():
             print(f"Wrong guess! {guess} is not in the word. You have {max_incorrect_guesses - incorrect_guesses} incorrect guesses left.")
 
         if all(letter in guessed_letters for letter in word_to_guess):
-            display_current_state(word_to_guess, guessed_letters)
-            print(f"Congratulations! You guessed the word '{word_to_guess}' correctly!")
+            print(f"Congratulations! The word was '{word_to_guess}' good job!")
             return True
 
     display_hangman(incorrect_guesses)
